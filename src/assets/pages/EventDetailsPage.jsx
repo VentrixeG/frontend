@@ -32,6 +32,7 @@ const EventDetailsPage = () => {
         {event.description && (
           <p className="body-md" style={{ margin: "1rem 0" }}>
             {event.description}
+            {event.location}
           </p>
         )}
         <Link to={`/events/booking/${id}`}>

@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import EventList from "./components/EventList";
-import CreateEventForm from "./components/CreateEventForm";
+
 
 const EventPage = () => {
   return (
@@ -12,7 +12,7 @@ const EventPage = () => {
       <Header />
       <main>
         <EventList />
-        <CreateEventForm />
+        
       </main>
       <Footer />
     </div>
