@@ -28,15 +28,15 @@ const EventDetailsPage = () => {
 
   
     return (
-      
-      
+      <>
+      <Header />
       <div className="container">
       <div className="card">
         <h1 className="title-lg">{event.title}</h1>
         {event.description && (
           <p className="body-md" style={{ margin: "1rem 0" }}>
-            {event.description} ,
-            {event.location}. Time of this event: {event.date} at {event.time}.
+            {event.description} , 
+            {event.location}. Time of this event: {event.eventDate}.
 
             
           </p>
@@ -47,8 +47,8 @@ const EventDetailsPage = () => {
         </Link>
       </div>
     </div>
-    
-    
+    <Footer />
+   </>
   );
 }
 

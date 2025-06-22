@@ -65,6 +65,7 @@ const handleChange = (e) => {
           setError ("Booking failed: " + msg)
         } else {
           console.log("Booking successful")
+          alert("Booking successful!");
           setTimeout(() => navigate(`/`), 2000) // Redirect after 2 secands. Too slow?
         }
       } catch (err) {
