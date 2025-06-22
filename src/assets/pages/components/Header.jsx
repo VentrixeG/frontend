@@ -11,7 +11,7 @@ const Header = () => {
       }}
     >
       <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 className="title-md" style={{ margin: 0 }}>Ventrixe</h1>
+        <h1 className="title-md" style={{ margin: 0 }}>Ventixe</h1>
         <Nav />
       </div>
     </header>

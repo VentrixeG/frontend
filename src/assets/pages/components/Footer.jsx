@@ -12,7 +12,7 @@ const Footer = () => {
         marginTop: "2rem"
       }}
     >
-      &copy; {new Date().getFullYear()} Ventixe. All rights reserved. 2035
+      &copy; {new Date().getFullYear()} Ventixe. All rights reserved.
     </footer>
   );
 };
