@@ -5,7 +5,6 @@ import './App.css'
 import EventPage from './assets/pages/EventPage.jsx'
 import EventDetailsPage from './assets/pages/EventDetailsPage.jsx'
 import BookingEvent from './assets/pages/BookingEventPage.jsx'
-import Nav from './assets/pages/components/Nav.jsx'
 import BookingEventPage from './assets/pages/BookingEventPage.jsx'
 
 

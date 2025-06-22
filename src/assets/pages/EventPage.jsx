@@ -8,15 +8,13 @@ import EventList from "./components/EventList";
 const EventPage = () => {
   return (
     <div className="portal-wrapper">
-     <Nav>Tst</Nav>
-     <Header>tst</Header>
-    <main>
-        <EventList/>
-
-        </main>
-        <Footer/>    
+      <Header />
+      <main>
+        <EventList />
+      </main>
+      <Footer />
     </div>
   );
-}
+};
 
 export default EventPage;

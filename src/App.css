@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,215 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+/* ===== CSS VARIABLES FROM FIGMA DESIGN ===== */
+:root {
+  /* === PRIMARY === */
+  --color-primary-100: #F26CF9;
+  --color-primary-90:  #F589FA;
+  --color-primary-50:  #FCD3FE;
+  --color-primary-40:  #FCE2FE;
+  --color-primary-30:  #FDEDFE;
+
+  /* === SECONDARY === */
+  --color-secondary-110: #1C2346;
+  --color-secondary-100: #37347D;
+  --color-secondary-90:  #5562A2;
+  --color-secondary-70:  #707DBF;
+  --color-secondary-60:  #ABB4DD;
+  --color-secondary-50:  #D3D4F9;
+
+  /* === YELLOW / ACCENT === */
+  --color-yellow-100: #FFCA39;
+  --color-yellow-90:  #FFFEC3;
+
+  /* === GREY === */
+  --color-grey-10:  #FFFFFF;
+  --color-grey-20:  #F7F7F7;
+  --color-grey-30:  #EDEDED;
+  --color-grey-40:  #E0E0E1;
+  --color-grey-50:  #C3C3C4;
+  --color-grey-60:  #9F9FA1;
+  --color-grey-70:  #777779;
+  --color-grey-80:  #636365;
+  --color-grey-90:  #434345;
+  --color-grey-100: #1E1E20;
+
+  /* === COOL GREY === */
+  --color-coolgrey-10:  #EEF1FF;
+  --color-coolgrey-20:  #E4E5F5;
+  --color-coolgrey-30:  #DDDDed;
+  --color-coolgrey-40:  #D1D2E0;
+  --color-coolgrey-50:  #B0B1BD;
+  --color-coolgrey-60:  #8F8F99;
+  --color-coolgrey-70:  #72737A;
+  --color-coolgrey-80:  #56565C;
+  --color-coolgrey-90:  #39393D;
+  --color-coolgrey-100: #131314;
+
+  /* === TYPOGRAPHY === */
+  --font-family: 'Inter', 'Roboto', sans-serif;
+
+  --font-size-h1: 32px;
+  --font-size-h2: 28px;
+  --font-size-h3: 26px;
+  --font-size-h4: 24px;
+  --font-size-h5: 22px;
+  --font-size-h6: 20px;
+
+  --font-size-title-lg: 18px;
+  --font-size-title-md: 16px;
+  --font-size-title-sm: 14px;
+  --font-size-title-xs: 12px;
+
+  --font-size-body-lg: 16px;
+  --font-size-body-md: 14px;
+  --font-size-body-sm: 12px;
+  --font-size-body-xs: 10px;
+
+  --font-size-btn-lg: 14px;
+  --font-size-btn-md: 12px;
+  --font-size-btn-sm: 10px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --text-color: var(--color-grey-100);
+  --text-muted: var(--color-grey-70);
+}
+
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body-lg);
+  background-color: var(--color-grey-10);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-semibold);
+}
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+}
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+}
+h4 {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+}
+h5 {
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-semibold);
+}
+h6 {
+  font-size: var(--font-size-h6);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ===== TITLES ===== */
+.title-lg { font-size: var(--font-size-title-lg); font-weight: var(--font-weight-bold); }
+.title-md { font-size: var(--font-size-title-md); font-weight: var(--font-weight-semibold); }
+.title-sm { font-size: var(--font-size-title-sm); font-weight: var(--font-weight-medium); }
+.title-xs { font-size: var(--font-size-title-xs); font-weight: var(--font-weight-regular); }
+
+/* ===== BODY TEXT ===== */
+.body-lg { font-size: var(--font-size-body-lg); font-weight: var(--font-weight-regular); }
+.body-md { font-size: var(--font-size-body-md); font-weight: var(--font-weight-regular); }
+.body-sm { font-size: var(--font-size-body-sm); font-weight: var(--font-weight-medium); }
+.body-xs { font-size: var(--font-size-body-xs); font-weight: var(--font-weight-medium); }
+
+/* ===== BUTTONS ===== */
+button {
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button.btn-lg { font-size: var(--font-size-btn-lg); font-weight: var(--font-weight-semibold); padding: 0.7rem 1.5rem; }
+button.btn-md { font-size: var(--font-size-btn-md); font-weight: var(--font-weight-medium); padding: 0.6rem 1.2rem; }
+button.btn-sm { font-size: var(--font-size-btn-sm); font-weight: var(--font-weight-medium); padding: 0.4rem 1rem; }
+
+button.primary {
+  background-color: var(--color-primary-100);
+  color: var(--color-grey-10);
+}
+button.secondary {
+  background-color: var(--color-secondary-100);
+  color: var(--color-grey-10);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  display: grid;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== CARD ===== */
+.card {
+  background-color: var(--color-grey-20);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ===== LINKS ===== */
+a {
+  color: var(--color-primary-90);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* ===== MISC ===== */
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.form-frid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: reapeat(auto-fill, minmax(250px, 1fr));
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-grey-40);
+  border-radius: 6px;
+  font-size: var(--font-size-body-md);
+  font-family: inherit; ;
+}
+
+.portal-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
