@@ -12,21 +12,10 @@ const Footer = () => {
         marginTop: "2rem"
       }}
     >
-      &copy; {new Date().getFullYear()} Ventrixe. All rights reserved.
+      &copy; {new Date().getFullYear()} Ventixe. All rights reserved. 2035
     </footer>
   );
 };
 
 export default Footer;
 
-
-
-// import React from "react";
-
-// const Footer = () => {
-//   return (
-//   <footer></footer>
-//   );
-// }
-
-// export default Footer;

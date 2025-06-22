@@ -2,6 +2,8 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 const BookingEventPage = () => {
@@ -9,6 +11,8 @@ const BookingEventPage = () => {
   const { id } = useParams()
 
     const [event, setEvent] = useState({});
+    const [success, setSuccess] = useState(false); // State to track successful booking
+    const [error, setError] = useState(null); // Errortracker!
     
     const [formData, setFormData] = useState({
       eventId: id,
@@ -36,25 +40,7 @@ const BookingEventPage = () => {
           console.error(err)
         }
       }
-/*
-const postBooking = async () => {
-  try {
-    const res = await fetch(`https://bookingservice-euchhwdpc9evgcdp.swedencentral-01.azurewebsites.net/api/bookings`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    })
 
-    if (!res.ok) {
-      console.error("Booking failed")
-    } else {
-      console.log("Booking successful")
-      navigate(`/events/${id}`)
-    }
-  } catch (err) {
-    console.error("Error submitting booking", err)
-  }
-} */
 const handleChange = (e) => {
   const { name, value } = e.target
   setFormData(prev => ({ ...prev, [name]: value }))
@@ -63,6 +49,8 @@ const handleChange = (e) => {
 
     const handleSubmit = async (e) => {
       e.preventDefault()
+      setError(null) // Reset error state on new submission
+      setSuccess(false) // Reset success state on new submission?
 
       try {
         const res = await fetch(`https://bookingservice02-dkc8bwhhc0c7g7gd.swedencentral-01.azurewebsites.net/api/bookings`, {
@@ -72,10 +60,12 @@ const handleChange = (e) => {
         })
     
         if (!res.ok) {
+          const msg = await res.text() // Get error message from response
           console.error("Booking failed")
+          setError ("Booking failed: " + msg)
         } else {
           console.log("Booking successful")
-          navigate(`/`)
+          setTimeout(() => navigate(`/`), 2000) // Redirect after 2 secands. Too slow?
         }
       } catch (err) {
         console.error("Error submitting booking", err)
@@ -84,6 +74,8 @@ const handleChange = (e) => {
     
 
     return (
+      <>
+      <Header />
       <div className="container">
         <h1 className="title-lg">Book Event – {event.title}</h1>
         <form onSubmit={handleSubmit} className="card" noValidate>
@@ -120,79 +112,15 @@ const handleChange = (e) => {
           <button type="submit" className="btn-md primary" style={{ marginTop: "1rem" }}>
             Book Now
           </button>
+
+          {success && <p style={{ color: "green" }}>Booking successful! Redirecting...</p>}
+          {error && <p style={{ color: "red" }}>Error: {error}</p>}
+
         </form>
       </div>
-    );
-    
-
-//   return (
-// <div>
-//   <h1>Book Event - {event.title}</h1>
-//   <form onSubmit={handleSubmit} noValidate>
-//     <div>
-//       <label>First Name</label>
-//       <input
-//         type="text"
-//         name="firstName"
-//         value={formData.firstName}
-//         onChange={handleChange}
-//         required
-//       />
-//     </div>
-//     <div>
-//       <label>Last Name</label>
-//       <input
-//         type="text"
-//         name="lastName"
-//         value={formData.lastName}
-//         onChange={handleChange}
-//         required
-//       />
-//     </div>
-//     <div>
-//       <label>E-mail</label>
-//       <input
-//         type="email"
-//         name="email"
-//         value={formData.email}
-//         onChange={handleChange}
-//         required
-//       />
-//     </div>
-//     <div>
-//       <label>Street Name</label>
-//       <input
-//         type="text"
-//         name="streetName"
-//         value={formData.streetName}
-//         onChange={handleChange}
-//         required
-//       />
-//     </div>
-//     <div>
-//       <label>Postal Code</label>
-//       <input
-//         type="text"
-//         name="postalCode"
-//         value={formData.postalCode}
-//         onChange={handleChange}
-//         required
-//       />
-//     </div>
-//     <div>
-//       <label>City</label>
-//       <input
-//         type="text"
-//         name="city"
-//         value={formData.city}
-//         onChange={handleChange}
-//         required
-//       />
-//     </div>
-//     <button type="submit">Book Now</button>
-//   </form>
-// </div>
-//   );
+      <Footer />
+    </>
+  );
 }
 
 export default BookingEventPage
