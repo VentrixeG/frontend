@@ -31,9 +31,10 @@ const EventDetailsPage = () => {
         <h1 className="title-lg">{event.title}</h1>
         {event.description && (
           <p className="body-md" style={{ margin: "1rem 0" }}>
-            {event.description}" ,"
+            {event.description} ,
             {event.location}
           </p>
+          
         )}
         <Link to={`/events/booking/${id}`}>
           <button className="btn-md primary">Book Event</button>
