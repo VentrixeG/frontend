@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 const EventDetailsPage = () => {
@@ -27,8 +28,8 @@ const EventDetailsPage = () => {
 
   
     return (
-      <>
-      <Header />
+      
+      
       <div className="container">
       <div className="card">
         <h1 className="title-lg">{event.title}</h1>
@@ -46,8 +47,8 @@ const EventDetailsPage = () => {
         </Link>
       </div>
     </div>
-    <Footer />
-    </>
+    
+    
   );
 }
 
