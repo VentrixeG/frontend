@@ -19,7 +19,7 @@ const EventList = () => {
 
   return (
     <section className="container">
-      <h2 className="title-lg">Kommande events</h2>
+      <h2 className="title-lg">Events</h2>
       <div className="event-grid">
         {events.map((event) => (
           <EventItem key={event.id} item={event} />
